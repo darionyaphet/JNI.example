@@ -1,0 +1,5 @@
+1. /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/bin/javac HelloJNI.java
+2. /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/bin/javah HelloJNI
+3. gcc -I/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/include -I/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/include/darwin -dynamiclib -o libhello.dylib HelloJNI.cpp
+   g++ -fPIC -I/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/include -I/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/include/darwin -dynamiclib -o libhello.dylib HelloJNI.cpp
+4. java -Djava.library.path=. HelloJNI
